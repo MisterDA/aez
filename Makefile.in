@@ -54,8 +54,8 @@ CMA  = aez.cma
 CMXA = aez.cmxa
 
 all: $(OCAMLBEST)
-byte: $(CMA) 
-opt: $(CMA) $(CMXA)  
+byte: $(CMA)
+opt: $(CMA) $(CMXA)
 
 # bytecode and native-code compilation
 ######################################
@@ -96,29 +96,29 @@ aez.cmx: $(CMX)
 .SUFFIXES: .mli .ml .cmi .cmo .cmx .mll .mly
 
 .mli.cmi:
-	@true compile -w a $(BFLAGS) $< 
+	@true compile -w a $(BFLAGS) $<
 	$(if $(QUIET),@echo 'Compiling $@' &&) $(OCAMLC) -c $(BFLAGS) $<
 
 .ml.cmo:
 	$(if $(QUIET),@echo 'Compiling $@' &&) $(OCAMLC) -c $(BFLAGS) $<
-	@true compile -w a $(BFLAGS) $< 
+	@true compile -w a $(BFLAGS) $<
 
 .ml.o:
-	@true compile -w a $(BFLAGS) $< 
+	@true compile -w a $(BFLAGS) $<
 	$(if $(QUIET),@echo 'Compiling $@' &&) $(OCAMLOPT) -c $(OFLAGS) $<
 
 .ml.cmx:
 	$(if $(QUIET),@echo 'Compiling $@' &&) $(OCAMLOPT) -c $(OFLAGS) $<
-	@true compile -w a $(BFLAGS) $< 
+	@true compile -w a $(BFLAGS) $<
 
 .mll.ml:
 	$(if $(QUIET),@echo 'Compiling $<' &&) $(OCAMLLEX) $< > /dev/null
 
 .mly.ml:
-	$(if $(QUIET),@echo 'Compiling $<' &&) $(OCAMLYACC) -v $< 
+	$(if $(QUIET),@echo 'Compiling $<' &&) $(OCAMLYACC) -v $<
 
 .mly.mli:
-	$(if $(QUIET),@echo 'Compiling $<' &&) $(OCAMLYACC) -v $< 
+	$(if $(QUIET),@echo 'Compiling $<' &&) $(OCAMLYACC) -v $<
 
 # Emacs tags
 ############
@@ -140,11 +140,11 @@ INSTALL_LIBDIR=$(DESTDIR)$(OCAMLLIB)/alt-ergo-zero
 
 install: install-$(OCAMLBEST)
 
-install-byte: 
+install-byte:
 	mkdir -p $(INSTALL_LIBDIR)
 	cp -f aez.cm[iot] $(CMA) $(INSTALL_LIBDIR)
 
-install-opt: 
+install-opt:
 	mkdir -p $(INSTALL_LIBDIR)
 	cp -f aez.cm[iot] $(CMA) $(INSTALL_LIBDIR)
 	cp -f aez$(LIBEXT) aez.cmx $(CMXA) $(INSTALL_LIBDIR)
@@ -160,7 +160,7 @@ doc: smt/smt.mli
 	ocamldoc -html -d doc/ -I smt -I common smt/smt.mli
 #######
 
-clean:: 
+clean::
 	@rm -f *.cm[itox] *.cmti *.o *~ *.annot
 	@rm -f common/*.cm[itox] common/*.cmti common/*.o common/*~ common/*.annot
 	@rm -f smt/*.cm[itox] smt/*.cmti  smt/*.o smt/*~ smt/*.annot

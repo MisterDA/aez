@@ -11,13 +11,13 @@
 (*                                                                        *)
 (**************************************************************************)
 
-type operator = 
-  | Plus | Minus | Mult | Div | Modulo 
+type operator =
+  | Plus | Minus | Mult | Div | Modulo
 
 type name_kind = Ac | Constructor | Other
 
-type t = 
-  | True 
+type t =
+  | True
   | False
   | Name of Hstring.t * name_kind
   | Int of Hstring.t
@@ -40,4 +40,3 @@ val print : Format.formatter -> t -> unit
 
 module Map : Map.S with type key = t
 module Set : Set.S with type elt = t
-
