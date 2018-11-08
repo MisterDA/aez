@@ -53,9 +53,9 @@ NAME = aez
 CMA  = aez.cma
 CMXA = aez.cmxa
 
-all: $(OCAMLBEST)
-byte: $(CMA)
-opt: $(CMA) $(CMXA)
+all: .depend $(OCAMLBEST)
+byte: .depend $(CMA)
+opt: .depend $(CMA) $(CMXA)
 
 # bytecode and native-code compilation
 ######################################
