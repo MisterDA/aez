@@ -23,8 +23,8 @@ LIBDIR=$(DESTDIR)@libdir@/alt-ergo-zero
 MANDIR=$(DESTDIR)@mandir@
 
 # other variables set by ./configure
-OCAMLC   = @OCAMLC@
-OCAMLOPT = @OCAMLOPT@
+OCAMLC   = ocamlfind ocamlc
+OCAMLOPT = ocamlfind ocamlopt
 OCAMLDEP = @OCAMLDEP@
 OCAMLLEX = @OCAMLLEX@
 OCAMLYACC= @OCAMLYACC@
@@ -38,8 +38,8 @@ OBJEXT = @OBJEXT@
 
 INCLUDES = -I common/ -I smt/
 
-BFLAGS = -dtypes -g $(INCLUDES) -annot
-OFLAGS = -dtypes $(INCLUDES) -annot -for-pack Aez
+BFLAGS = -package num -g $(INCLUDES) -annot
+OFLAGS = -package num $(INCLUDES) -annot -for-pack Aez
 
 BIBBYTE=nums.cma unix.cma
 
