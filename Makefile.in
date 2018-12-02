@@ -161,10 +161,10 @@ doc: smt/smt.mli
 #######
 
 clean::
-	@rm -f *.cm[itox] *.cmti *.o *~ *.annot
+	@rm -f *.cm[itox] *.cmti *.o *~ *.annot *.a *.cma *.cmxa
 	@rm -f common/*.cm[itox] common/*.cmti common/*.o common/*~ common/*.annot
 	@rm -f smt/*.cm[itox] smt/*.cmti  smt/*.o smt/*~ smt/*.annot
-	@rm -f $(GENERATED) *.output
+	@rm -f $(GENERATED) *.output config.log
 	@rm -f $(NAME).byte $(NAME).opt
 
 # depend
