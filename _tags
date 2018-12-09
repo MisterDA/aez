@@ -1,0 +1,2 @@
+true: package(num)
+<{smt/arith,smt/cc,smt/combine,smt/exception,smt/explanation,smt/fm,smt/intervals,smt/literal,smt/polynome,smt/sig,smt/smt,smt/solver,smt/solver_types,smt/sum,smt/symbols,smt/term,smt/ty,smt/uf,smt/use,common/bitv,common/hashcons,common/heap,common/hstring,common/iheap,common/timer,common/vec}.ml>: for-pack(Aez)

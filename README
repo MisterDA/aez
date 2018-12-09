@@ -20,12 +20,7 @@ To compile Alt-Ergo Zero you will need OCaml version 3.11 (or newer).
 
 Uncompress the archive and do:
      cd aez-0.3
-     ./configure
-     make
-
-then with superuser rigths:
-     make install
-
+     ocamlbuild -use-ocamlfind aez.cmx
 
 USAGE
 =====
