@@ -63,14 +63,12 @@ let push_none t =
 
 let last t =
   let e = t.data.(t.sz - 1) in
-  assert (not (e == t.dummy));
   e
 
 let get t i =
   assert (i < t.sz);
   let e = t.data.(i) in
-  if e == t.dummy then raise Not_found
-  else e
+  e
 
 let set t i v =
   t.data.(i) <- v;
