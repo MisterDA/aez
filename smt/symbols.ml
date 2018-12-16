@@ -78,8 +78,8 @@ let to_string =  function
   | Op Mult -> "*"
   | Op Div -> "/"
   | Op Modulo -> "%"
-  | True -> "true"
-  | False -> "false"
+  | True -> "⊤"
+  | False -> "⊥"
 
 let print fmt s = Format.fprintf fmt "%s" (to_string s)
 

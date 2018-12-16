@@ -340,11 +340,11 @@ end
     match phi with
       | Lit a -> Literal.LT.print fmt a
       | Comb (Not, [f]) ->
-          fprintf fmt "not (%a)" print f
-      | Comb (And, l) -> fprintf fmt "(%a)" (print_list "and") l
-      | Comb (Or, l) ->  fprintf fmt "(%a)" (print_list "or") l
+          fprintf fmt "¬(%a)" print f
+      | Comb (And, l) -> fprintf fmt "(%a)" (print_list "∧") l
+      | Comb (Or, l) ->  fprintf fmt "(%a)" (print_list "∨") l
       | Comb (Imp, [f1; f2]) ->
-          fprintf fmt "(%a => %a)" print f1 print f2
+          fprintf fmt "(%a ⇒ %a)" print f1 print f2
       | _ -> assert false
   and print_list sep fmt = function
     | [] -> ()
@@ -391,7 +391,7 @@ end
                 List.map (function Term.T x -> x | _ -> assert false) ts in
               Literal.Distinct (false, ts)
             | Le, [Term.T t1; Term.T t2] ->
-              Literal.Builtin (true, Hstring.make "<=", [t1; t2])
+              Literal.Builtin (true, Hstring.make "≤", [t1; t2])
             | Lt, [Term.T t1; Term.T t2] ->
               Literal.Builtin (true, Hstring.make "<", [t1; t2])
             | _ -> assert false

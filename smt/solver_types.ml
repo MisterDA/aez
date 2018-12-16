@@ -239,8 +239,8 @@ module Debug = struct
       | n, None   -> sprintf "@@%d" n
 
   let value a =
-    if a.is_true then sprintf "[T%s]" (level a)
-    else if a.neg.is_true then sprintf "[F%s]" (level a)
+    if a.is_true then sprintf "[⊤%s]" (level a)
+    else if a.neg.is_true then sprintf "[⊥%s]" (level a)
     else ""
 
   let value_ms_like a =

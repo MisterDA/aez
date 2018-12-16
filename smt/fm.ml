@@ -63,7 +63,7 @@ module Make
     }
 
     let print fmt ineq = fprintf fmt "%a %s 0" P.print ineq.ple0
-      (if ineq.is_le then "<=" else "<")
+      (if ineq.is_le then "≤" else "<")
 
     let create p1 p2 is_le a expl =
       let p = P.add p1 (P.mult (P.create [] (Int (-1)) (P.type_info p1)) p2) in
